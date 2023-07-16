@@ -1,2 +1,2 @@
 # DSA
-Uploading on the go, while learning DSA
+Uploading on the go, while learning DSA.
