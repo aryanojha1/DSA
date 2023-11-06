@@ -1,0 +1,19 @@
+class SeatManager {
+    private PriorityQueue<Integer> as;
+
+    public SeatManager(int n) {
+        as = new PriorityQueue<>();
+        for(int sn = 1; sn<=n; ++sn){
+            as.offer(sn);
+        }
+    }
+    
+    public int reserve() {
+        int sn = as.poll();
+        return sn;
+    }
+    
+    public void unreserve(int sn) {
+        as.offer(sn);
+    }
+}
