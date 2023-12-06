@@ -1,0 +1,15 @@
+class Solution {
+    public int totalMoney(int n) {
+        int a = 0 ;
+        int m = 1;
+
+        while(n>0){
+            for(int d =0; d<Math.min(n,7); d++){
+                a += m + d;
+            }
+            n -= 7;
+            m++;
+        }
+        return a;
+    }
+}
