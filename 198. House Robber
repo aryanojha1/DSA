@@ -1,0 +1,14 @@
+class Solution {
+    public int rob(int[] nums) {
+        int r = 0; 
+        int nr = 0;
+
+        for(int i =0; i<nums.length; i++){
+            int newr = nr + nums[i];
+            int newNoR = Math.max(nr, r);
+            r = newr;
+            nr = newNoR;
+        }
+        return Math.max(r, nr);
+    }
+}
