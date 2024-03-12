@@ -1,0 +1,21 @@
+
+class Solution {
+    public ListNode removeZeroSumSublists(ListNode head) {
+        ListNode f = new ListNode(0, head);
+        ListNode s = f;
+
+        while(s != null){
+            int psum = 0;
+            ListNode e = s.next;
+            while(e != null){
+                psum += e.val;
+                if(psum == 0){
+                    s.next = e.next;
+                }
+                e = e.next;
+            }
+            s = s.next;
+        }
+        return f.next;
+    }
+}
