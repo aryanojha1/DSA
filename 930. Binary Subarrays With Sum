@@ -1,0 +1,20 @@
+class Solution {
+    public int numSubarraysWithSum(int[] nums, int goal) {
+        int tc =0;
+        int cs =0;
+
+        Map<Integer, Integer> freq = new HashMap<>();
+
+        for(int num : nums){
+            cs += num;
+            if(cs == goal){
+                tc++;
+            }
+            if(freq.containsKey(cs - goal)){
+                tc += freq.get(cs - goal);
+            }
+            freq.put(cs, freq.getOrDefault(cs, 0)+1);
+        }
+        return tc;
+    }
+}
